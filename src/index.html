@@ -9,11 +9,27 @@
     <title>WeatherApp</title>
   </head>
   <body>
+    <include src="src/components/appbar.html"></include>
     <div class="container mx-auto max-w-[50%] my-10">
-      <include src="src/components/appbar.html"></include>
-      <include src="src/components/weatherform.html"></include>
+      <div class="my-20">
+        <include src="src/components/weatherform.html"></include>
+      </div>
+      <p id="error-message" class="text-red-700 font-bold text-2xl"></p>
+
+      <div id="table-data" class="relative overflow-x-auto">
+        <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr>
+              <th class="px-6 py-3">Nazwa właściwości</th>
+              <th class="px-6 py-3">Wartość</th>
+            </tr>
+          </thead>
+          <tbody id="table-content"></tbody>
+        </table>
+      </div>
       <pre id="data"></pre>
-      <p id="error-message" class="text-red-700 font-bold"></p>
     </div>
   </body>
 </html>
